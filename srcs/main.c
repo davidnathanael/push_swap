@@ -10,9 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 int main(int argc, char **argv)
 {
-	(void)argc;
-	(void)argv;
+	//(void)argc;
+	//(void)argv;
+	t_swap *lst;
+
+	lst = ft_check_arg(argv, argc);
+	if (lst == NULL)
+	{
+		printf ("Error \n");
+		return (0);
+	}
+	while (lst)
+	{
+		lst = lst->next;
+	}
 	return (0);
 }

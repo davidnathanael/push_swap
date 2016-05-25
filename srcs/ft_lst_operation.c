@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lst_operation.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adompe <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/25 15:19:39 by adompe            #+#    #+#             */
-/*   Updated: 2016/05/25 15:19:50 by adompe           ###   ########.fr       */
+/*   Created: 2016/05/25 16:41:18 by adompe            #+#    #+#             */
+/*   Updated: 2016/05/25 16:41:21 by adompe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-#include "libft.h"
-#include "limits.h"
-
-typedef struct          s_swap
+t_swap  *lst_new(int val)
 {
-	int                *content;
-	struct s_swap      *next;
-}                       t_swap;
+    t_swap *new;
 
+    new = (t_swap *)malloc(sizeof(t_swap));
+    new->content = val;
+    new->next = NULL;
+    return (new);
+}
 
-t_swap	*ft_check_arg(char **argv, int argc);
-t_swap  *lst_new(int val);
-void	lst_add(t_swap **alst, t_swap *new);
-
-#endif
+void	lst_add(t_swap **alst, t_swap *new)
+{
+	if (alst && new)
+	{
+		new->next = *alst;
+		*alst = new;
+	}
+}

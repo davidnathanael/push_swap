@@ -11,20 +11,47 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
-t_list		*ft_check_arg(char **argv, int argc)
+int         ft_check_double(t_swap *lst)
+{
+
+    return (1);
+}
+
+int         ft_check_digit(char *str)
+{
+    while (*str)
+    {
+        if (!ft_isdigit(*str))
+            return (0);
+        str++;
+    }
+    return (1);
+}
+
+t_swap		*ft_check_arg(char **argv, int argc)
 {
     int     i;
-    t_list  *lst;
+    t_swap  *lst;
 
-    i = 1;
-    if (argc == 0)
+    lst = NULL;
+    i = argc - 1;
+    if (argc == 1)
         return (NULL);
-    while (i < argc)
+    while (i > 0)
     {
+        if (!ft_check_digit(argv[i]))
+        {
+            printf ("NULL");
+            return (NULL);
+        }
+        printf("%d\n", ft_atoi(argv[i]));
         if (lst == NULL)
-            lst = ft_lstnew(ft_atoi())
-        argv[]
+            lst = lst_new(ft_atoi(argv[i]));
+        else
+            lst_add(&lst, lst_new(ft_atoi(argv[i])));
+        i--;
     }
-
+    return (lst);
 }
