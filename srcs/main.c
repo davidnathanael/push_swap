@@ -14,9 +14,8 @@
 
 int main(int argc, char **argv)
 {
-	//(void)argc;
-	//(void)argv;
-	t_swap *lst;
+	t_stack **begin;
+	t_stack *lst;
 
 	lst = ft_check_arg(argv, argc);
 	if (lst == NULL)
@@ -24,9 +23,11 @@ int main(int argc, char **argv)
 		printf ("Error \n");
 		return (0);
 	}
-	while (lst)
+	begin = &lst;
+	// ft_swap(begin);
+	while (begin)
 	{
-		lst = lst->next;
+		begin = (*begin)->next;
 	}
 	return (0);
 }

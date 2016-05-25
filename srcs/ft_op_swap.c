@@ -12,37 +12,36 @@
 
 #include "push_swap.h"
 
-void	ft_swap(t_list **stack)
+void	ft_swap(t_stack **stack)
 {
-	t_list *tmp;
+	int	tmp;
 
-	tmp = NULL;
+	tmp = 0;
 	if (!*stack)
 		return ;
-	if (!*stack->next)
+	if (!(*stack)->next)
 		return ;
-	tmp = *stack->next;
-	*stack->next = tmp->next;
-	tmp->next = *stack;
-	stack = tmp;
+	tmp = (*stack)->content;
+	(*stack)->content = (*stack)->next->content;
+	(*stack)->next->content = tmp;
 }
 
-void	ft_push(t_list **stack_src, t_list **stack_dest)
+void	ft_push(t_stack **stack_src, t_stack **stack_dest)
 {
-	t_list *tmp;
+	t_stack *tmp;
 
 	tmp = NULL;
 	if (!*stack_src)
 		return;
 	tmp = *stack_src;
-	stack_src = tmp->next;
+	*stack_src = tmp->next;
 	tmp->next = *stack_dest;
-	stack_dest = tmp;
+	*stack_dest = tmp;
 }
 
-void	ft_rotate(t_list **stack)
+void	ft_rotate(t_stack **stack)
 {
-	t_list *tmp;
+	t_stack *tmp;
 
 	tmp = *stack;
 	if (!*stack)
@@ -51,22 +50,26 @@ void	ft_rotate(t_list **stack)
 		tmp = tmp->next;
 	tmp->next = *stack;
 	tmp->next->next = NULL;
-	stack = *stack->next;
+	*stack = (*stack)->next;
 }
 
-void ft_reverse(t_list **stack)
+void ft_reverse(t_stack **stack)
 {
-	t_list *tmp;
+	t_stack	*tmp;
+	int		nb_tmp;
 
 	tmp = *stack;
+	nb_tmp = 0;
 	if (!*stack)
 		return;
 	while (tmp->next)
 	{
+		nb_tmp = tmp->next->content;
+		tmp->next->content = tmp->content;
 		tmp = tmp->next;
 	}
 	tmp->next = *stack;
 	tmp->next->next = NULL;
-	stack = *stack->next;
+	*stack = (*stack)->next;
 
 }

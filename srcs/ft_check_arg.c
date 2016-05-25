@@ -13,7 +13,7 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-int         ft_check_double(t_swap *lst)
+int         ft_check_double(t_stack *lst)
 {
 
     return (1);
@@ -30,10 +30,10 @@ int         ft_check_digit(char *str)
     return (1);
 }
 
-t_swap		*ft_check_arg(char **argv, int argc)
+t_stack		*ft_check_arg(char **argv, int argc)
 {
     int     i;
-    t_swap  *lst;
+    t_stack  *lst;
 
     lst = NULL;
     i = argc - 1;
