@@ -20,9 +20,9 @@ static int         ft_check_double(int *tab, int argc)
 
     i = 0;
     j = 0;
-    while (i < argc - 2)
+    while (i < argc - 1)
     {
-        while (j < argc - 2)
+        while (j < argc - 1)
         {
             if (tab[i] == tab[j] && j != i)
                 return (0);
@@ -38,7 +38,7 @@ static int         ft_check_digit(char *str)
 {
     while (*str)
     {
-        if (!ft_isdigit(*str) || *str == '-' || *str == '+')
+        if (!ft_isdigit(*str) && *str != '-' && *str != '+')
             return (0);
         str++;
     }
