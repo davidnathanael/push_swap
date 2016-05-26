@@ -13,13 +13,28 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-int         ft_check_double(t_stack *lst)
+static int         ft_check_double(int *tab, int argc)
 {
+    int i;
+    int j;
 
+    i = 0;
+    j = 0;
+    while (i < argc - 2)
+    {
+        while (j < argc - 2)
+        {
+            if (tab[i] == tab[j] && j != i)
+                return (0);
+            j++;
+        }
+        j = 0;
+        i++;
+    }
     return (1);
 }
 
-int         ft_check_digit(char *str)
+static int         ft_check_digit(char *str)
 {
     while (*str)
     {
@@ -32,6 +47,7 @@ int         ft_check_digit(char *str)
 
 t_stack		*ft_check_arg(char **argv, int argc, t_push_swap *data)
 {
+    int     tab[argc - 1];
     int     i;
     t_stack  *lst;
 
@@ -42,17 +58,19 @@ t_stack		*ft_check_arg(char **argv, int argc, t_push_swap *data)
     while (i > 0)
     {
         if (!ft_check_digit(argv[i]))
-        {
-            printf ("NULL");
             return (NULL);
-        }
-        printf("%d\n", ft_atoi(argv[i]));
         if (lst == NULL)
             lst = lst_new(ft_atoi(argv[i]));
         else
             lst_add(&lst, lst_new(ft_atoi(argv[i])));
+<<<<<<< HEAD
 		data->nb_elem++;
+=======
+        tab[i - 1] = ft_atoi(argv[i]);
+>>>>>>> 2a99603e1b506471c4e8837a4c75dc067e7fec06
         i--;
     }
+    if (!ft_check_double(tab, argc))
+        return (NULL);
     return (lst);
 }
