@@ -29,13 +29,14 @@ LIBFT_DIR	=	libft/
 LIBFT_LIB	=	libft/libft.a
 
 SRCBASE		=	\
-				main.c \
-				ft_check_arg.c \
-				ft_lst_operation.c
+				ft_check_arg.c												\
+				ft_lst_operation.c											\
+				ft_op_swap.c												\
+				main.c
 
 INCBASE		=	\
-				libft.h \
-				push_swap.h \
+				libft.h														\
+				push_swap.h
 
 SRCS		=	$(addprefix $(SRCDIR), $(SRCBASE))
 

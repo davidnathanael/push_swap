@@ -13,7 +13,11 @@
 #include "push_swap.h"
 #include <stdio.h>
 
+<<<<<<< HEAD
 int         ft_check_double(int *tab, int argc)
+=======
+int         ft_check_double(t_stack *lst)
+>>>>>>> b981314bfdd271a340d67ae1021cdc028a7b5047
 {
     int i;
     int j;
@@ -45,11 +49,11 @@ int         ft_check_digit(char *str)
     return (1);
 }
 
-t_swap		*ft_check_arg(char **argv, int argc)
+t_stack		*ft_check_arg(char **argv, int argc)
 {
     int     tab[argc - 1];
     int     i;
-    t_swap  *lst;
+    t_stack  *lst;
 
     lst = NULL;
     i = argc - 1;

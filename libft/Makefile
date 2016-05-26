@@ -83,7 +83,6 @@ ft_lstdel.c\
 ft_lstadd.c\
 ft_lstiter.c\
 ft_lstmap.c\
-ft_swap.c\
 ft_strupcase.c\
 ft_strlowcase.c\
 ft_isspace.c\
