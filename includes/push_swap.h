@@ -13,6 +13,7 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+#include <stdlib.h>
 #include "libft.h"
 #include "limits.h"
 
@@ -31,12 +32,12 @@ typedef struct			s_push_swap
 
 
 
-t_stack	*ft_check_arg(char **argv, int argc);
-t_stack  *lst_new(int val);
-void	lst_add(t_stack **alst, t_stack *new);
-void	ft_swap(t_stack **stack);
-void	ft_push(t_stack **stack_src, t_stack **stack_dest);
-void	ft_rotate(t_stack **stack);
-void	ft_reverse(t_stack **stack);
+t_stack					*ft_check_arg(char **argv, int argc, t_push_swap *data)
+t_stack					*lst_new(int val);
+void					lst_add(t_stack **alst, t_stack *new);
+void					ft_swap(t_stack **stack);
+void					ft_push(t_stack **stack_src, t_stack **stack_dest);
+void					ft_rotate(t_stack **stack);
+void					ft_reverse(t_stack **stack);
 
 #endif

@@ -13,7 +13,7 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-int         ft_check_double(int *tab, int argc)
+static int         ft_check_double(int *tab, int argc)
 {
     int i;
     int j;
@@ -34,7 +34,7 @@ int         ft_check_double(int *tab, int argc)
     return (1);
 }
 
-int         ft_check_digit(char *str)
+static int         ft_check_digit(char *str)
 {
     while (*str)
     {
@@ -45,7 +45,7 @@ int         ft_check_digit(char *str)
     return (1);
 }
 
-t_stack		*ft_check_arg(char **argv, int argc)
+t_stack		*ft_check_arg(char **argv, int argc, t_push_swap *data)
 {
     int     tab[argc - 1];
     int     i;
@@ -63,6 +63,7 @@ t_stack		*ft_check_arg(char **argv, int argc)
             lst = lst_new(ft_atoi(argv[i]));
         else
             lst_add(&lst, lst_new(ft_atoi(argv[i])));
+		data->nb_elem++;
         tab[i - 1] = ft_atoi(argv[i]);
         i--;
     }

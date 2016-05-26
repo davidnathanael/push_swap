@@ -50,7 +50,7 @@ all:		$(NAME)
 	echo "\033[38;5;44m☑️  ALL    $(NAMEBASE) is done\033[0m\033[K"
 
 $(NAME):	$(OBJS)
-	$(CC) -g -o $(NAME) $(OBJS) $(LIBFT_LIB)
+	$(CC) $(FLAGS) -o $(NAME) $(OBJS) $(LIBFT_LIB)
 	echo -en "\r\033[38;5;22m☑️  MAKE   $(NAMEBASE)\033[0m\033[K"
 	echo "\r\033[38;5;184m👥  GROUP MEMBER(S):\033[0m\033[K"
 	echo "\r\033[38;5;15m`cat auteur | sed s/^/\ \ \ \ -/g`\033[0m\033[K"
