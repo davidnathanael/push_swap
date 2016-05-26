@@ -63,12 +63,9 @@ t_stack		*ft_check_arg(char **argv, int argc, t_push_swap *data)
             lst = lst_new(ft_atoi(argv[i]));
         else
             lst_add(&lst, lst_new(ft_atoi(argv[i])));
-<<<<<<< HEAD
-		data->nb_elem++;
-=======
         tab[i - 1] = ft_atoi(argv[i]);
->>>>>>> 2a99603e1b506471c4e8837a4c75dc067e7fec06
         i--;
+		data->nb_elem++;
     }
     if (!ft_check_double(tab, argc))
         return (NULL);

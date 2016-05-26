@@ -14,7 +14,9 @@
 # define PUSH_SWAP_H
 
 #include <stdlib.h>
+#include <stdio.h>
 #include "libft.h"
+#include "ft_printf.h"
 #include "limits.h"
 
 typedef struct          s_stack
@@ -32,7 +34,7 @@ typedef struct			s_push_swap
 
 
 
-t_stack					*ft_check_arg(char **argv, int argc, t_push_swap *data)
+t_stack					*ft_check_arg(char **argv, int argc, t_push_swap *data);
 t_stack					*lst_new(int val);
 void					lst_add(t_stack **alst, t_stack *new);
 void					ft_swap(t_stack **stack);
