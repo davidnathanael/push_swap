@@ -23,6 +23,7 @@ typedef struct          s_stack
 {
 	int                	content;
 	struct s_stack      *next;
+	struct s_stack		*prev;
 }                       t_stack;
 
 typedef struct			s_push_swap
