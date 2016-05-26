@@ -68,12 +68,14 @@ static t_push_swap		*ft_set_data(int argc, char **argv)
 	data = (t_push_swap *)malloc(sizeof(*data));
 	if (!data)
 		return (NULL);
+	data->nb_elem = 0;
 	data->stack_a = ft_check_arg(argv, argc, data);
 	data->stack_b = NULL;
 	data->nb_a = data->nb_elem;
 	data->nb_b = 0;
 	data->min_a = data->stack_a->content;
 	data->min_b = 0;
+	data->nb_operations = 0;
 	return (data);
 }
 

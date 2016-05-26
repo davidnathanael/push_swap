@@ -33,6 +33,7 @@ typedef	unsigned char	t_bool;
 
 typedef struct			s_push_swap
 {
+	int					nb_operations;
 	int					nb_elem;
 	t_stack				*stack_a;
 	t_stack				*stack_b;
