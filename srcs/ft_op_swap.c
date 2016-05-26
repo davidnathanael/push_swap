@@ -21,6 +21,7 @@ void	ft_swap(t_stack **stack)
 		return ;
 	if (!(*stack)->next)
 		return ;
+	ft_printf("{red}1st : %d | 2nd : %d{eoc}\n", (*stack)->content, (*stack)->next->content);
 	tmp = (*stack)->content;
 	(*stack)->content = (*stack)->next->content;
 	(*stack)->next->content = tmp;
