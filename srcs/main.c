@@ -12,33 +12,52 @@
 
 #include "push_swap.h"
 
+t_bool	ft_is_sorted(t_stack *stack)
+{
+	if (!stack)
+		return TRUE;
+	while (stack->next)
+	{
+		if (stack->content > stack->next->content)
+			return FALSE;
+		stack = stack->next;
+	}
+	return TRUE;
+}
+
 int		ft_get_min_index(t_push_swap *data)
 {
 	t_stack		*stack;
-	int 		index;
+	int 		min;
 	int 		j;
 
 	stack = data->stack_a;
-	index = 0;
+	min = stack->content;
 	j = 0;
 	while (stack)
 	{
-		if (stack->content < data->min_a)
-		{
-			index = j;
-			data->min_a = stack->content;
-		}
-		j++;
+		if (stack->content < min)
+			min = stack->content;
 		stack = stack->next;
 	}
-	return index;
+	return min;
 }
 
 void push_swap(t_push_swap *data)
 {
 	int min_index;
+	int min;
 
-	min_index = ft_get_min_index(data);
+	min = 0;
+	while (!ft_is_sorted(data->stack_a))
+	{
+		min = ft_get_min_index(data);
+		while (data->stack_a->content != min)
+			ft_ra(data);
+		ft_pb(data);
+	}
+	while (data->nb_b > 0)
+		ft_pa(data);
 	ft_print_data(data);
 }
 

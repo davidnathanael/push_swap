@@ -14,16 +14,19 @@
 
 void ft_ra(t_push_swap *data)
 {
+	ft_printf("{red}{bold}ra{eoc}\n");
 	ft_rotate(&data->stack_a);
 }
 
 void ft_rb(t_push_swap *data)
 {
+	ft_printf("{red}{bold}rb{eoc}\n");
 	ft_rotate(&data->stack_b);
 }
 
 void ft_rr(t_push_swap *data)
 {
+	ft_printf("{red}{bold}rr{eoc}\n");
 	ft_ra(data);
 	ft_rb(data);
 }

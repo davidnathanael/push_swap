@@ -14,26 +14,35 @@
 
 void ft_sa(t_push_swap *data)
 {
+	ft_printf("{red}{bold}sa{eoc}\n");
 	ft_swap(&data->stack_a);
 }
 
 void ft_sb(t_push_swap *data)
 {
+	ft_printf("{red}{bold}sb{eoc}\n");
 	ft_swap(&data->stack_b);
 }
 
 void ft_ss(t_push_swap *data)
 {
+	ft_printf("{red}{bold}ss{eoc}\n");
 	ft_sa(data);
 	ft_sb(data);
 }
 
 void ft_pa(t_push_swap *data)
 {
+	ft_printf("{red}{bold}pa{eoc}\n");
 	ft_push(&data->stack_b, &data->stack_a);
+	data->nb_a = (data->nb_b > 0) ? data->nb_a + 1 : data->nb_a;
+	data->nb_b = (data->nb_b > 0) ? data->nb_b - 1 : data->nb_b;
 }
 
 void ft_pb(t_push_swap *data)
 {
+	ft_printf("{red}{bold}pb{eoc}\n");
 	ft_push(&data->stack_a, &data->stack_b);
+	data->nb_b = (data->nb_a > 0) ? data->nb_b + 1 : data->nb_b;
+	data->nb_a = (data->nb_a > 0) ? data->nb_a - 1 : data->nb_a;
 }
