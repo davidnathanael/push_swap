@@ -21,7 +21,7 @@ static t_push_swap		*ft_set_data(int argc, char **argv)
 		return (NULL);
 	data->stack_a = ft_check_arg(argv, argc, data);
 	t_stack *tmp = data->stack_a;
-	ft_printf("{blue}nb elem : %d\n\n{eoc}", data->nb_elem);
+	ft_printf("{blue}nb elem : %d\n{eoc}", data->nb_elem);
 	ft_swap(&data->stack_a);
 	while (tmp)
 	{
