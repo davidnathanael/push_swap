@@ -12,22 +12,30 @@
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+static t_push_swap		*ft_set_data(int argc, char **argv)
 {
-	t_stack **begin;
-	t_stack *lst;
+	t_push_swap		*data;
 
-	lst = ft_check_arg(argv, argc);
+	data = (t_push_swap *)malloc(sizeof(*data));
+	if (!data)
+		return (NULL);
+	data->stack_a = ft_check_arg(argc, argv, data);
+}
+
+int						main(int argc, char **argv)
+{
+	t_push_swap		*data;
+	t_stack			*lst;
+
+	data = ft_set_data(argc, argv);
 	if (lst == NULL)
 	{
 		printf ("Error \n");
 		return (0);
 	}
-	begin = &lst;
-	// ft_swap(begin);
 	while (begin)
 	{
-		begin = (*begin)->next;
+		begin = &(*begin)->next;
 	}
 	return (0);
 }

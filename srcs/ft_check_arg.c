@@ -30,7 +30,7 @@ int         ft_check_digit(char *str)
     return (1);
 }
 
-t_stack		*ft_check_arg(char **argv, int argc)
+t_stack		*ft_check_arg(char **argv, int argc, t_push_swap *data)
 {
     int     i;
     t_stack  *lst;
@@ -51,6 +51,7 @@ t_stack		*ft_check_arg(char **argv, int argc)
             lst = lst_new(ft_atoi(argv[i]));
         else
             lst_add(&lst, lst_new(ft_atoi(argv[i])));
+		data->nb_elem++;
         i--;
     }
     return (lst);
