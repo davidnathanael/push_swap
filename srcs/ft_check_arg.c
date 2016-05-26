@@ -38,7 +38,7 @@ static int         ft_check_digit(char *str)
 {
     while (*str)
     {
-        if (!ft_isdigit(*str))
+        if (!ft_isdigit(*str) || *str == '-' || *str == '+')
             return (0);
         str++;
     }
