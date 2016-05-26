@@ -31,6 +31,10 @@ typedef struct			s_push_swap
 	int					nb_elem;
 	t_stack				*stack_a;
 	t_stack				*stack_b;
+	int					nb_a;
+	int					nb_b;
+	int					min_a;
+	int					min_b;
 }                       t_push_swap;
 
 
@@ -38,9 +42,25 @@ typedef struct			s_push_swap
 t_stack					*ft_check_arg(char **argv, int argc, t_push_swap *data);
 t_stack					*lst_new(int val);
 void					lst_add(t_stack **alst, t_stack *new);
+
 void					ft_swap(t_stack **stack);
 void					ft_push(t_stack **stack_src, t_stack **stack_dest);
 void					ft_rotate(t_stack **stack);
 void					ft_reverse(t_stack **stack);
+
+void					ft_sa(t_push_swap *data);
+void					ft_sb(t_push_swap *data);
+void					ft_ss(t_push_swap *data);
+void					ft_pa(t_push_swap *data);
+void					ft_pb(t_push_swap *data);
+void					ft_ra(t_push_swap *data);
+void					ft_rb(t_push_swap *data);
+void					ft_rr(t_push_swap *data);
+void					ft_rra(t_push_swap *data);
+void					ft_rrb(t_push_swap *data);
+void					ft_rrr(t_push_swap *data);
+
+void					ft_print_stacks(t_push_swap *data);
+void 					ft_print_data(t_push_swap *data);
 
 #endif

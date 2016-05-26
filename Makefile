@@ -31,9 +31,13 @@ LIBFT_LIB	=	libft/libft.a
 FTPRINTF_LIB	=	libftprintf/libftprintf.a
 
 SRCBASE		=	\
+				debug.c														\
 				ft_check_arg.c												\
 				ft_lst_operation.c											\
-				ft_op_swap.c												\
+				ft_op_reverse_rotate.c										\
+				ft_op_rotate.c												\
+				ft_op_swap_push.c											\
+				ft_operations.c												\
 				main.c
 
 INCBASE		=	\
