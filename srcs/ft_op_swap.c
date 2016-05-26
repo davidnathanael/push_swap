@@ -52,22 +52,24 @@ void	ft_rotate(t_stack **stack)
 		tmp = tmp->next;
 	tmp->next = first;
 	*stack = first->next;
+	*stack->prev = NULL;
 	first->next = NULL;
 }
 
 void ft_reverse(t_stack **stack)
 {
 	t_stack	*tmp;
-	int		nb_tmp;
+	t_stack *last;
 
 	tmp = *stack;
-	nb_tmp = 0;
+	last = NULL;
 	if (!*stack)
 		return;
 	while (tmp->next)
-	{
-		nb_tmp = tmp->next->content;
-		tmp->next->content = tmp->content;
 		tmp = tmp->next;
-	}
+	last = tmp->prev;
+	tmp->next = (*stack)->next;
+	tmp->prev = NULL;
+	*stack = tmp;
+	last->next = NULL;
 }
