@@ -13,9 +13,24 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-int         ft_check_double(t_swap *lst)
+int         ft_check_double(int *tab, int argc)
 {
+    int i;
+    int j;
 
+    i = 0;
+    j = 0;
+    while (i < argc - 2)
+    {
+        while (j < argc - 2)
+        {
+            if (tab[i] == tab[j] && j != i)
+                return (0);
+            j++;
+        }
+        j = 0;
+        i++;
+    }
     return (1);
 }
 
@@ -32,6 +47,7 @@ int         ft_check_digit(char *str)
 
 t_swap		*ft_check_arg(char **argv, int argc)
 {
+    int     tab[argc - 1];
     int     i;
     t_swap  *lst;
 
@@ -42,16 +58,15 @@ t_swap		*ft_check_arg(char **argv, int argc)
     while (i > 0)
     {
         if (!ft_check_digit(argv[i]))
-        {
-            printf ("NULL");
             return (NULL);
-        }
-        printf("%d\n", ft_atoi(argv[i]));
         if (lst == NULL)
             lst = lst_new(ft_atoi(argv[i]));
         else
             lst_add(&lst, lst_new(ft_atoi(argv[i])));
+        tab[i - 1] = ft_atoi(argv[i]);
         i--;
     }
+    if (!ft_check_double(tab, argc))
+        return (NULL);
     return (lst);
 }
