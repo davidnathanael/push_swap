@@ -21,7 +21,6 @@ void	ft_swap(t_stack **stack)
 		return ;
 	if (!(*stack)->next)
 		return ;
-	// ft_printf("{red}1st : %d | 2nd : %d{eoc}\n", (*stack)->content, (*stack)->next->content);
 	tmp = (*stack)->content;
 	(*stack)->content = (*stack)->next->content;
 	(*stack)->next->content = tmp;
@@ -43,15 +42,17 @@ void	ft_push(t_stack **stack_src, t_stack **stack_dest)
 void	ft_rotate(t_stack **stack)
 {
 	t_stack *tmp;
+	t_stack	*first;
 
 	tmp = *stack;
+	first = *stack;
 	if (!*stack)
 		return;
 	while (tmp->next)
 		tmp = tmp->next;
-	tmp->next = *stack;
-	tmp->next->next = NULL;
-	*stack = (*stack)->next;
+	tmp->next = first;
+	*stack = first->next;
+	first->next = NULL;
 }
 
 void ft_reverse(t_stack **stack)
@@ -69,8 +70,4 @@ void ft_reverse(t_stack **stack)
 		tmp->next->content = tmp->content;
 		tmp = tmp->next;
 	}
-	tmp->next = *stack;
-	tmp->next->next = NULL;
-	*stack = (*stack)->next;
-
 }

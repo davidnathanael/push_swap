@@ -20,9 +20,11 @@ static t_push_swap		*ft_set_data(int argc, char **argv)
 	if (!data)
 		return (NULL);
 	data->stack_a = ft_check_arg(argv, argc, data);
-	t_stack *tmp = data->stack_a;
 	ft_printf("{blue}nb elem : %d\n{eoc}", data->nb_elem);
-	ft_swap(&data->stack_a);
+
+	ft_reverse(&data->stack_a);
+	ft_printf("stackbis : %p : %d\n", data->stack_a, data->stack_a->content);
+	t_stack *tmp = data->stack_a;
 	while (tmp)
 	{
 		ft_printf("%d\n", tmp->content);
