@@ -23,6 +23,7 @@ void ft_swap_bottom(t_push_swap *data)
 	ft_ra(data);
 }
 
+
 void ft_normal_sort(t_push_swap *data)
 {
 	ft_printf("normal sort\n");
@@ -34,13 +35,16 @@ void ft_normal_sort(t_push_swap *data)
 	{
 		min = ft_get_min(data);
 		min_pos = ft_get_min_pos(data);
-		while (data->stack_a->content != min)
-		{
-			if (data->nb_a / 2 < min_pos)
+		if (data->nb_a / 2 < min_pos)
+			while (data->stack_a->content != min)
+			{
 				ft_rra(data);
-			else
+			}
+		else
+			while (data->stack_a->content != min)
+			{
 				ft_ra(data);
-		}
+			}
 		if (!ft_is_sorted(data->stack_a))
 			ft_pb(data);
 	}
