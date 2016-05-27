@@ -26,3 +26,21 @@ int		*ft_get_3_elems(t_push_swap *data)
 	elems[2] = stack->next->next->content;
 	return (elems);
 }
+
+void	ft_min_is_first(t_push_swap *data, int *elems)
+{
+	if (elems[1] < elems[2])
+		return ;
+	ft_rra(data);
+	ft_sa(data);
+}
+
+void	ft_min_is_second(t_push_swap *data, int *elems)
+{
+
+}
+
+void	ft_min_is_third(t_push_swap *data, int *elems)
+{
+
+}

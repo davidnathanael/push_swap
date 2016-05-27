@@ -38,6 +38,7 @@ SRCBASE		=	\
 				ft_op_rotate.c												\
 				ft_op_swap_push.c											\
 				ft_operations.c												\
+				handle_3_elems.c											\
 				main.c														\
 				sort.c														\
 				utils.c

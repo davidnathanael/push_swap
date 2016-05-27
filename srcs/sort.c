@@ -50,17 +50,19 @@ void ft_normal_sort(t_push_swap *data)
 
 void ft_handle_three_elems(t_push_swap *data)
 {
+	ft_printf("3 args sort\n");
 	int		*elems;
 	int		pos;
 
 	elems = ft_get_3_elems(data);
-	pos = ft_get_min_post(data);
-	if (pos == 1)
-	{
-		ft_ra(data);
-		ft_sa(data);
-	}
-
+	pos = ft_get_min_pos(data);
+	ft_print_data(data);
+	if (pos == 0)
+		ft_min_is_first(data, elems);
+	else if (pos == 1)
+		ft_min_is_second(data, elems);
+	else
+		ft_min_is_third(data, elems);
 }
 
 // 1 2 3
