@@ -6,7 +6,7 @@
 /*   By: ddela-cr <ddela-cr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 15:00:52 by ddela-cr          #+#    #+#             */
-/*   Updated: 2016/05/27 15:00:53 by ddela-cr         ###   ########.fr       */
+/*   Updated: 2016/05/27 21:44:36 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		*ft_get_3_elems(t_push_swap *data)
 {
-	t_stack *stack;
-	int	*elems;
+	t_stack		*stack;
+	int			*elems;
 
 	stack = data->stack_a;
 	elems = (int *)malloc(sizeof(*elems) * 3);
@@ -26,10 +26,3 @@ int		*ft_get_3_elems(t_push_swap *data)
 	elems[2] = stack->next->next->content;
 	return (elems);
 }
-
-// 1 2 3 [ok]
-// 1 3 2 [ok]
-// 2 1 3 [ok]
-// 3 1 2 [ok]
-// 2 3 1 [ok]
-// 3 2 1 [ok]
