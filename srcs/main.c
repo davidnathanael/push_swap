@@ -15,6 +15,8 @@
 
 void push_swap(t_push_swap *data)
 {
+	if (ft_is_sorted(data->stack_a))
+		return ;
 	if (ft_needs_swap_top(data))
 		ft_sa(data);
 	else if (data->nb_elem == 3)
@@ -23,7 +25,6 @@ void push_swap(t_push_swap *data)
 		ft_swap_bottom(data);
 	else
 		ft_normal_sort(data);
-	ft_print_data(data);
 }
 
 static t_push_swap		*ft_set_data(int argc, char **argv)
@@ -55,6 +56,9 @@ int						main(int argc, char **argv)
 	if (!data)
 		ft_printf("ERROR\n");
 	else if (data->nb_elem > 1)
+	{
 		push_swap(data);
+		ft_print_data(data);
+	}
 	return (0);
 }
