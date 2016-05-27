@@ -61,22 +61,18 @@ int	ft_get_min_pos(t_push_swap *data)
 	t_stack		*stack;
 	int 		min;
 	int			pos;
-	int			j;
 
-	j = 0;
+	pos = 0;
 	stack = data->stack_a;
-	min = stack->content;
+	min = ft_get_min(data);
 	while (stack)
 	{
-		if (stack->content < min)
-		{
-			pos = j;
-			min = stack->content;
-		}
-		j++;
+		if (stack->content == min)
+			return (pos);
+		pos++;
 		stack = stack->next;
 	}
-	return pos;
+	return 0;
 }
 
 t_bool	ft_needs_swap_top(t_push_swap *data)
