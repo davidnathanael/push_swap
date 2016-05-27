@@ -61,10 +61,21 @@ void ft_handle_three_elems(t_push_swap *data)
 	pos = ft_get_min_pos(data);
 	ft_printf("3 args sort : min_pos : %d\n", pos);
 	ft_print_data(data);
-	if (pos == 0)
-		ft_min_is_first(data, elems);
+	if (pos == 0 && elems[1] > elems[2])
+	{
+		ft_rra(data);
+		ft_sa(data);
+	}
 	else if (pos == 1)
-		ft_min_is_second(data, elems);
+		ft_ra(data);
 	else
-		ft_min_is_third(data, elems);
+	{
+		if (elems[0] < elems[1])
+			ft_rra(data);
+		else
+		{
+			ft_ra(data);
+			ft_sa(data);
+		}
+	}
 }
