@@ -27,13 +27,20 @@ void ft_normal_sort(t_push_swap *data)
 {
 	ft_printf("normal sort\n");
 	int min;
+	int min_pos;
 
 	min = 0;
 	while (!ft_is_sorted(data->stack_a))
 	{
 		min = ft_get_min(data);
+		min_pos = ft_get_min_pos(data);
 		while (data->stack_a->content != min)
-			ft_ra(data);
+		{
+			if (data->nb_a / 2 < min_pos)
+				ft_rra(data);
+			else
+				ft_ra(data);
+		}
 		if (!ft_is_sorted(data->stack_a))
 			ft_pb(data);
 	}
