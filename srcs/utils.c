@@ -68,12 +68,12 @@ int	ft_get_min_pos(t_push_swap *data)
 	min = stack->content;
 	while (stack)
 	{
-		j++;
 		if (stack->content < min)
 		{
 			pos = j;
 			min = stack->content;
 		}
+		j++;
 		stack = stack->next;
 	}
 	return pos;
