@@ -35,7 +35,6 @@ void ft_normal_sort(t_push_swap *data)
 	{
 		min = ft_get_min(data);
 		min_pos = ft_get_min_pos(data);
-		ft_printf("%d\n\n", min_pos);
 		if (data->nb_a / 2 < min_pos)
 			while (data->stack_a->content != min)
 			{
