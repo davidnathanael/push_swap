@@ -15,10 +15,7 @@
 
 void push_swap(t_push_swap *data)
 {
-	ft_print_data(data);
 	ft_printf("\e[1;1H\e[2J");
-	if (ft_is_sorted(data->stack_a))
-		return ;
 	if (ft_needs_swap_top(data))
 		ft_sa(data);
 	else if (data->nb_elem == 3)
@@ -43,8 +40,6 @@ static t_push_swap		*ft_set_data(int argc, char **argv)
 	data->stack_b = NULL;
 	data->nb_a = data->nb_elem;
 	data->nb_b = 0;
-	data->min_a = data->stack_a->content;
-	data->min_b = 0;
 	data->nb_operations = 0;
 	return (data);
 }
@@ -57,10 +52,8 @@ int						main(int argc, char **argv)
 	data = ft_set_data(argc, argv);
 	if (!data)
 		ft_printf("ERROR\n");
-	else if (data->nb_elem > 1)
-	{
+	else if (data->nb_elem > 1 && !ft_is_sorted(data->stack_a))
 		push_swap(data);
-		ft_print_data(data);
-	}
+	report(data);
 	return (0);
 }

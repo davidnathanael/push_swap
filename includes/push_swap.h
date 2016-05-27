@@ -39,8 +39,6 @@ typedef struct			s_push_swap
 	t_stack				*stack_b;
 	int					nb_a;
 	int					nb_b;
-	int					min_a;
-	int					min_b;
 }                       t_push_swap;
 
 
@@ -51,8 +49,9 @@ void					lst_add(t_stack **alst, t_stack *new);
 
 t_bool					ft_is_sorted(t_stack *stack);
 t_bool					ft_is_prev_sorted(t_stack *stack);
-int						ft_get_min(t_push_swap *data);
-int						ft_get_min_pos(t_push_swap *data);
+int						ft_get_min(t_stack *stack);
+int						ft_get_max(t_stack *stack);
+int						ft_get_min_pos(t_stack *stack);
 
 int						*ft_get_3_elems(t_push_swap *data);
 
@@ -79,7 +78,8 @@ void					ft_rra(t_push_swap *data);
 void					ft_rrb(t_push_swap *data);
 void					ft_rrr(t_push_swap *data);
 
-void					ft_print_stacks(t_push_swap *data);
+void 					ft_print_stack(t_stack *stack, char stack_letter, int nb_elem);
 void 					ft_print_data(t_push_swap *data);
+void 					report(t_push_swap *data);
 
 #endif
