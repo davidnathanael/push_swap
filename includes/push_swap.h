@@ -48,7 +48,16 @@ typedef struct			s_push_swap
 t_stack					*ft_check_arg(char **argv, int argc, t_push_swap *data);
 t_stack					*lst_new(int val);
 void					lst_add(t_stack **alst, t_stack *new);
+
 t_bool					ft_is_sorted(t_stack *stack);
+t_bool					ft_is_prev_sorted(t_stack *stack);
+int						ft_get_min(t_push_swap *data);
+
+t_bool					ft_needs_swap_top(t_push_swap *data);
+t_bool					ft_needs_swap_bottom(t_push_swap *data);
+void 					ft_swap_bottom(t_push_swap *data);
+void					ft_normal_sort(t_push_swap *data);
+void 					ft_handle_three_elems(t_push_swap *data);
 
 void					ft_swap(t_stack **stack);
 void					ft_push(t_stack **stack_src, t_stack **stack_dest);

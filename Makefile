@@ -38,7 +38,9 @@ SRCBASE		=	\
 				ft_op_rotate.c												\
 				ft_op_swap_push.c											\
 				ft_operations.c												\
-				main.c
+				main.c														\
+				sort.c														\
+				utils.c
 
 INCBASE		=	\
 				ft_printf.h													\
