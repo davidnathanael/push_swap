@@ -21,7 +21,7 @@ void ft_print_stacks(t_push_swap *data)
 void ft_print_data(t_push_swap *data)
 {
 	ft_printf("{red}-------- DATA --------{eoc}\n\n");
-	ft_printf("OPERATIONS DONE : {red}%d{eoc}\n\n", data->nb_operations);
 	ft_printf("TOTAL ELEMENTS : {red}%d{eoc}\n\n", data->nb_elem);
 	ft_print_stacks(data);
+	ft_printf("OPERATIONS DONE : {red}%d{eoc}\n\n", data->nb_operations);
 }

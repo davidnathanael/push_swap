@@ -15,6 +15,8 @@
 
 void push_swap(t_push_swap *data)
 {
+	ft_print_data(data);
+	ft_printf("\e[1;1H\e[2J");
 	if (ft_is_sorted(data->stack_a))
 		return ;
 	if (ft_needs_swap_top(data))
