@@ -40,3 +40,25 @@ void ft_normal_sort(t_push_swap *data)
 	while (data->nb_b > 0)
 		ft_pa(data);
 }
+
+void ft_handle_three_elems(t_push_swap *data)
+{
+	int		*elems;
+	int		pos;
+
+	elems = ft_get_3_elems(data);
+	pos = ft_get_min_post(data);
+	if (pos == 1)
+	{
+		ft_ra(data);
+		ft_sa(data);
+	}
+
+}
+
+// 1 2 3
+// 1 3 2
+// 2 1 3
+// 2 3 1
+// 3 1 2
+// 3 2 1

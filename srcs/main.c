@@ -17,6 +17,8 @@ void push_swap(t_push_swap *data)
 {
 	if (ft_needs_swap_top(data))
 		ft_sa(data);
+	else if (data->nb_elem == 3)
+		ft_handle_three_elems(data);
 	else if (ft_needs_swap_bottom(data))
 		ft_swap_bottom(data);
 	else
