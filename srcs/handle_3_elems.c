@@ -37,7 +37,8 @@ void	ft_min_is_first(t_push_swap *data, int *elems)
 
 void	ft_min_is_second(t_push_swap *data, int *elems)
 {
-
+	ft_printf("here\n");
+	ft_ra(data);
 }
 
 void	ft_min_is_third(t_push_swap *data, int *elems)
