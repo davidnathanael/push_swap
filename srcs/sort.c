@@ -68,10 +68,3 @@ void ft_handle_three_elems(t_push_swap *data)
 	else
 		ft_min_is_third(data, elems);
 }
-
-// 1 2 3
-// 1 3 2
-// 2 1 3
-// 2 3 1
-// 3 1 2
-// 3 2 1

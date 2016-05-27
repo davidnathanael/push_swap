@@ -44,3 +44,10 @@ void	ft_min_is_third(t_push_swap *data, int *elems)
 {
 
 }
+
+// 1 2 3 [ok]
+// 1 3 2 [ok]
+// 2 1 3 [ok]
+// 3 1 2
+// 2 3 1
+// 3 2 1

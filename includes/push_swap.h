@@ -55,9 +55,9 @@ int						ft_get_min(t_push_swap *data);
 int						ft_get_min_pos(t_push_swap *data);
 
 int						*ft_get_3_elems(t_push_swap *data);
-void 					ft_min_is_first(data);
-void 					ft_min_is_second(data);
-void 					ft_min_is_third(data);
+void 					ft_min_is_first(t_push_swap *data, int *elems);
+void 					ft_min_is_second(t_push_swap *data, int *elems);
+void 					ft_min_is_third(t_push_swap *data, int *elems);
 
 t_bool					ft_needs_swap_top(t_push_swap *data);
 t_bool					ft_needs_swap_bottom(t_push_swap *data);
