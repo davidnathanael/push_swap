@@ -60,7 +60,8 @@ int						main(int argc, char **argv)
 	else if (data->nb_elem > 1 && !ft_is_sorted(data->stack_a))
 	{
 		push_swap(data);
-		report(data);
+		if (data->option_r)
+			report(data);
 	}
 	return (0);
 }
