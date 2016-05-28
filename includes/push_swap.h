@@ -22,6 +22,9 @@
 # define FALSE 0
 # define TRUE 1
 
+# define HORIZONTAL ' '
+# define VERTICAL '\n'
+
 typedef struct          s_stack
 {
 	int                	content;
@@ -30,6 +33,7 @@ typedef struct          s_stack
 }                       t_stack;
 
 typedef	unsigned char	t_bool;
+typedef	unsigned char	t_orientation;
 
 typedef struct			s_push_swap
 {
@@ -42,6 +46,17 @@ typedef struct			s_push_swap
 	t_bool				option_v; //verbose
 	t_bool				option_n; //nb_operations
 	t_bool				option_r; //report
+	int					sa;
+	int					sb;
+	int					ss;
+	int					pa;
+	int					pb;
+	int					ra;
+	int					rb;
+	int					rr;
+	int					rra;
+	int					rrb;
+	int					rrr;
 }                       t_push_swap;
 
 
@@ -81,7 +96,8 @@ void					ft_rra(t_push_swap *data);
 void					ft_rrb(t_push_swap *data);
 void					ft_rrr(t_push_swap *data);
 
-void 					ft_print_stack(t_stack *stack, char stack_letter, int nb_elem);
+void					ft_print_stack(t_stack *stack, char stack_letter, int nb_elem,
+						t_orientation or);
 void 					ft_print_data(t_push_swap *data);
 void 					report(t_push_swap *data);
 

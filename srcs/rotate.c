@@ -15,24 +15,27 @@
 void ft_ra(t_push_swap *data)
 {
 	if (data->option_v)
-		ft_printf("{red}{bold}ra{eoc} ");
+		ft_printf("{yellow}{bold}ra{eoc} ");
 	ft_rotate(&data->stack_a);
+	data->ra++;
 	data->nb_operations++;
 }
 
 void ft_rb(t_push_swap *data)
 {
 	if (data->option_v)
-		ft_printf("{red}{bold}rb{eoc} ");
+		ft_printf("{yellow}{bold}rb{eoc} ");
 	ft_rotate(&data->stack_b);
+	data->rb++;
 	data->nb_operations++;
 }
 
 void ft_rr(t_push_swap *data)
 {
 	if (data->option_v)
-		ft_printf("{red}{bold}rr{eoc} ");
+		ft_printf("{yellow}{bold}rr{eoc} ");
 	ft_rotate(&data->stack_a);
 	ft_rotate(&data->stack_b);
+	data->rr++;
 	data->nb_operations++;
 }
