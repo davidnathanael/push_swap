@@ -39,6 +39,9 @@ typedef struct			s_push_swap
 	t_stack				*stack_b;
 	int					nb_a;
 	int					nb_b;
+	t_bool				option_v; //verbose
+	t_bool				option_n; //nb_operations
+	t_bool				option_r; //report
 }                       t_push_swap;
 
 

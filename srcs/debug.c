@@ -15,7 +15,7 @@ void ft_print_stack(t_stack *stack, char stack_letter, int nb_elem)
 
 void ft_print_data(t_push_swap *data)
 {
-	ft_printf("\n{red}-------- DATA --------{eoc}\n\n");
+	ft_printf("\n{red}-------- %s --------{eoc}\n\n", "DATA");
 	ft_printf("OPERATIONS DONE : {red}%d{eoc}\n\n", data->nb_operations);
 	ft_printf("TOTAL ELEMENTS : {red}%d{eoc}\n", data->nb_elem);
 	ft_print_stack(data->stack_a, 'A', data->nb_a);
@@ -24,7 +24,7 @@ void ft_print_data(t_push_swap *data)
 
 void report(t_push_swap *data)
 {
-	ft_printf("\n{red}-------- REPORT --------{eoc}\n\n");
+	ft_printf("\n\n{red}-------- %s --------{eoc}\n\n", "REPORT");
 
 	ft_printf("SORTING DONE WITHIN {bold}{green}%d{eoc} OPERATIONS\n\n", data->nb_operations);
 	ft_printf("TOTAL ELEMENTS : {bold}{green}%d{eoc}\n\n", data->nb_elem);

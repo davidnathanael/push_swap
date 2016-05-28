@@ -16,6 +16,8 @@
 void push_swap(t_push_swap *data)
 {
 	ft_printf("\e[1;1H\e[2J");
+	if (data->option_v)
+		ft_printf("\n{red}-------- %s --------{eoc}\n\n", "OPERATIONS");
 	if (ft_needs_swap_top(data))
 		ft_sa(data);
 	else if (data->nb_elem == 3)
@@ -34,6 +36,9 @@ static t_push_swap		*ft_set_data(int argc, char **argv)
 	if (!data)
 		return (NULL);
 	data->nb_elem = 0;
+	data->option_v = TRUE;
+	data->option_n = FALSE;
+	data->option_r = FALSE;
 	data->stack_a = ft_check_arg(argv, argc, data);
 	if (!data->stack_a)
 		return (NULL);
@@ -53,7 +58,9 @@ int						main(int argc, char **argv)
 	if (!data)
 		ft_printf("ERROR\n");
 	else if (data->nb_elem > 1 && !ft_is_sorted(data->stack_a))
+	{
 		push_swap(data);
-	report(data);
+		report(data);
+	}
 	return (0);
 }
