@@ -40,7 +40,7 @@ static t_push_swap		*ft_set_data(int argc, char **argv)
 	data->option_n = FALSE;
 	data->option_r = FALSE;
 	data->stack_a = ft_check_arg(argv, argc, data);
-	if (!data->stack_a)
+	if (!data->stack_a && argc > 1)
 		return (NULL);
 	data->stack_b = NULL;
 	data->nb_a = data->nb_elem;
