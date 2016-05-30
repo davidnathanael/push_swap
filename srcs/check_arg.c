@@ -26,11 +26,11 @@ int              ft_arg_flag(int i, char **argv, int argc, t_push_swap *data)
       while (argv[i][j])
       {
         if (argv[i][j] == 'v')
-          ft_printf("%s\n", "get_v");
+          data->option_v = TRUE;
         else if (argv[i][j] == 'r')
-          ft_printf("%s\n", "get_r");
+          data->option_r = TRUE;
         else if (argv[i][j] == 'n')
-          ft_printf("%s\n", "get_n");
+          data->option_n = TRUE;
         else
           return (0);
         j++;
