@@ -15,7 +15,7 @@
 
 void push_swap(t_push_swap *data)
 {
-	//ft_printf("\e[1;1H\e[2J");
+	// ft_printf("\e[1;1H\e[2J");
 	if (data->option_v)
 		ft_printf("\n{red}-------- %s --------{eoc}\n\n", "OPERATIONS");
 	if (ft_needs_swap_top(data))
@@ -71,8 +71,8 @@ int						main(int argc, char **argv)
 	else if (data->nb_elem > 1 && !ft_is_sorted(data->stack_a))
 	{
 		push_swap(data);
-		// if (data->option_r)
-		report(data);
+		if (data->option_r)
+			ft_report(data);
 	}
 	return (0);
 }

@@ -15,7 +15,6 @@
 
 void ft_swap_bottom(t_push_swap *data)
 {
-	// ft_printf("{blue}{bold}SWAP BOTTOM SORT{eoc}\n\n");
 	ft_rra(data);
 	ft_rra(data);
 	ft_sa(data);
@@ -30,7 +29,6 @@ void ft_normal_sort(t_push_swap *data)
 	int min_pos;
 
 	min = 0;
-	// ft_printf("{blue}{bold}NORMAL SORT{eoc}\n\n");
 	while (!ft_is_sorted(data->stack_a))
 	{
 		min = ft_get_min(data->stack_a);
@@ -55,7 +53,6 @@ void ft_handle_three_elems(t_push_swap *data)
 
 	elems = ft_get_3_elems(data);
 	pos = ft_get_min_pos(data->stack_a);
-	// ft_printf("{blue}{bold}3 ELEMENTS SORT{eoc}\n\n");
 	if (pos == 0)
 	{
 		ft_rra(data);

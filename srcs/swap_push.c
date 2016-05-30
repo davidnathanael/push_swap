@@ -14,37 +14,53 @@
 
 void ft_sa(t_push_swap *data)
 {
-	if (data->option_v)
-		ft_printf("{red}{bold}sa{eoc} ");
+	ft_print_operation(SA);
 	ft_swap(&data->stack_a);
+	if (data->option_v)
+	{
+		ft_print_stack(data->stack_a, 'A', data->nb_a, VERTICAL);
+		ft_print_stack(data->stack_b, 'B', data->nb_b, VERTICAL);
+	}
 	data->sa++;
 	data->nb_operations++;
 }
 
 void ft_sb(t_push_swap *data)
 {
-	if (data->option_v)
-		ft_printf("{red}{bold}sb{eoc} ");
+	ft_print_operation(SB);
 	ft_swap(&data->stack_b);
+	if (data->option_v)
+	{
+		ft_print_stack(data->stack_a, 'A', data->nb_a, VERTICAL);
+		ft_print_stack(data->stack_b, 'B', data->nb_b, VERTICAL);
+	}
 	data->sb++;
 	data->nb_operations++;
 }
 
 void ft_ss(t_push_swap *data)
 {
-	if (data->option_v)
-		ft_printf("{red}{bold}ss{eoc} ");
+	ft_print_operation(SS);
 	ft_swap(&data->stack_a);
 	ft_swap(&data->stack_b);
+	if (data->option_v)
+	{
+		ft_print_stack(data->stack_a, 'A', data->nb_a, VERTICAL);
+		ft_print_stack(data->stack_b, 'B', data->nb_b, VERTICAL);
+	}
 	data->ss++;
 	data->nb_operations++;
 }
 
 void ft_pa(t_push_swap *data)
 {
-	if (data->option_v)
-		ft_printf("{green}{bold}pa{eoc} ");
+	ft_print_operation(PA);
 	ft_push(&data->stack_b, &data->stack_a);
+	if (data->option_v)
+	{
+		ft_print_stack(data->stack_a, 'A', data->nb_a, VERTICAL);
+		ft_print_stack(data->stack_b, 'B', data->nb_b, VERTICAL);
+	}
 	data->nb_a = (data->nb_b > 0) ? data->nb_a + 1 : data->nb_a;
 	data->nb_b = (data->nb_b > 0) ? data->nb_b - 1 : data->nb_b;
 	data->pa++;
@@ -53,9 +69,13 @@ void ft_pa(t_push_swap *data)
 
 void ft_pb(t_push_swap *data)
 {
-	if (data->option_v)
-		ft_printf("{green}{bold}pb{eoc} ");
+	ft_print_operation(PB);
 	ft_push(&data->stack_a, &data->stack_b);
+	if (data->option_v)
+	{
+		ft_print_stack(data->stack_a, 'A', data->nb_a, VERTICAL);
+		ft_print_stack(data->stack_b, 'B', data->nb_b, VERTICAL);
+	}
 	data->nb_b = (data->nb_a > 0) ? data->nb_b + 1 : data->nb_b;
 	data->nb_a = (data->nb_a > 0) ? data->nb_a - 1 : data->nb_a;
 	data->pb++;

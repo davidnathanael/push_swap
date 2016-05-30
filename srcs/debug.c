@@ -3,16 +3,15 @@
 void ft_print_stack(t_stack *stack, char stack_letter, int nb_elem, t_orientation or)
 {
 	t_stack *tmp = stack;
-	ft_printf("\n{red}Stack %c ({bold}{green}%d{eoc} elements{red}){green}{bold} -> %s{eoc}\n\n", stack_letter, nb_elem, (ft_is_sorted(stack) ? "SORTED" : "NOT SORTED"));
+	ft_printf("\n{red}Stack %c ({bold}{green}%d{eoc} elements{red}){bold}", stack_letter, nb_elem);
+	(ft_is_sorted(stack) ? ft_printf("{green}{bold} -> %s{eoc}\n\n", "SORTED") : ft_printf("{red}{bold} -> %s{eoc}\n\n", "NOT SORTED"));
 	if (!tmp)
 		ft_printf("{bold}         NO ELEMENT{eoc}\n");
-	ft_printf("{red}TOP OF STACK{eoc}\n\n");
 	while (tmp)
 	{
 		ft_printf("{bold}%10d{eoc}%c", tmp->content, or);
 		tmp = tmp->next;
 	}
-	ft_printf("\n{red}BOTTOM OF STACK{eoc}\n\n");
 }
 
 void ft_print_data(t_push_swap *data)
@@ -24,7 +23,7 @@ void ft_print_data(t_push_swap *data)
 	ft_print_stack(data->stack_b, 'B', data->nb_b, VERTICAL);
 }
 
-void report(t_push_swap *data)
+void ft_report(t_push_swap *data)
 {
 	ft_printf("\n\n{red}-------- %s --------{eoc}\n\n", "REPORT");
 
@@ -43,5 +42,32 @@ void report(t_push_swap *data)
 	ft_printf("RRA : {bold}{cyan}%10d{eoc} TIMES\n\n", data->rra);
 	ft_printf("RRB : {bold}{cyan}%10d{eoc} TIMES\n\n", data->rrb);
 	ft_printf("RRR : {bold}{cyan}%10d{eoc} TIMES\n\n", data->rrr);
-	// ft_print_stack(data->stack_a, 'A', data->nb_a, HORIZONTAL);
+	ft_print_stack(data->stack_a, 'A', data->nb_a, HORIZONTAL);
+}
+
+void ft_print_operation(t_operation operation)
+{
+	if (operation == SA)
+		ft_printf("{bold}{red}sa");
+	if (operation == SB)
+		ft_printf("{bold}{red}sb");
+	if (operation == SS)
+		ft_printf("{bold}{red}ss");
+	if (operation == PA)
+		ft_printf("{bold}{green}pa");
+	if (operation == PB)
+		ft_printf("{bold}{green}pb");
+	if (operation == RA)
+		ft_printf("{bold}{yellow}ra");
+	if (operation == RB)
+		ft_printf("{bold}{yellow}rb");
+	if (operation == RR)
+		ft_printf("{bold}{yellow}rr");
+	if (operation == RRA)
+		ft_printf("{bold}{cyan}rra");
+	if (operation == RRB)
+		ft_printf("{bold}{cyan}rrb");
+	if (operation == RRR)
+		ft_printf("{bold}{cyan}rrr");
+	ft_printf("{eoc} ");
 }

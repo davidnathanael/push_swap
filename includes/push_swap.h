@@ -34,6 +34,22 @@ typedef struct          s_stack
 
 typedef	unsigned char	t_bool;
 typedef	unsigned char	t_orientation;
+// typedef	unsigned char	t_operation;
+
+typedef enum		e_operation
+{
+	SA,
+	SB,
+	SS,
+	PA,
+	PB,
+	RA,
+	RB,
+	RR,
+	RRA,
+	RRB,
+	RRR
+}					t_operation;
 
 typedef struct			s_push_swap
 {
@@ -99,6 +115,7 @@ void					ft_rrr(t_push_swap *data);
 void					ft_print_stack(t_stack *stack, char stack_letter, int nb_elem,
 						t_orientation or);
 void 					ft_print_data(t_push_swap *data);
-void 					report(t_push_swap *data);
+void 					ft_print_operation(t_operation operation);
+void 					ft_report(t_push_swap *data);
 
 #endif
