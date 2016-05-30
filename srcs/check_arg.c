@@ -13,6 +13,34 @@
 #include "push_swap.h"
 #include <stdio.h>
 
+int              ft_arg_flag(int i, char **argv, int argc, t_push_swap *data)
+{
+  int j;
+
+  j = 1;
+  while (i > 0)
+  {
+    if (argv[i][0] != '-')
+      return (0);
+    else
+      while (argv[i][j])
+      {
+        if (argv[i][j] == 'v')
+          ft_printf("%s\n", "get_v");
+        else if (argv[i][j] == 'r')
+          ft_printf("%s\n", "get_r");
+        else if (argv[i][j] == 'n')
+          ft_printf("%s\n", "get_n");
+        else
+          return (0);
+        j++;
+      }
+    j = 1;
+    i--;
+  }
+  return (1);
+}
+
 static int         ft_check_double(int *tab, int argc)
 {
     int i;
@@ -58,7 +86,12 @@ t_stack		*ft_check_arg(char **argv, int argc, t_push_swap *data)
     while (i > 0)
     {
         if (!ft_check_digit(argv[i]))
+        {
+          if (ft_arg_flag(i, argv, argc, data))
+            return (lst);
+          else
             return (NULL);
+        }
         if (lst == NULL)
             lst = lst_new(ft_atoi(argv[i]));
         else
