@@ -61,6 +61,7 @@ static t_push_swap		*ft_set_data(int argc, char **argv)
 	data->nb_a = data->nb_elem;
 	data->nb_b = 0;
 	data->nb_operations = 0;
+	ft_init_operations(data);
 	return (data);
 }
 
