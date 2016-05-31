@@ -32,16 +32,16 @@ FTPRINTF_LIB	=	libftprintf/libftprintf.a
 
 SRCBASE		=	\
 				check_arg.c													\
-				debug.c														\
-				handle_3_elems.c											\
 				list.c														\
 				main.c														\
 				operations.c												\
+				printing.c													\
 				reverse_rotate.c											\
 				rotate.c													\
 				sort.c														\
 				swap_push.c													\
-				utils.c
+				utils.c														\
+				utils2.c
 
 INCBASE		=	\
 				ft_printf.h													\

@@ -12,10 +12,9 @@
 
 #include "push_swap.h"
 
-
-void push_swap(t_push_swap *data)
+static void				push_swap(t_push_swap *data)
 {
-	// ft_printf("\e[1;1H\e[2J");
+	ft_printf("\e[1;1H\e[2J");
 	if (data->option_v)
 		ft_printf("\n{red}-------- %s --------{eoc}\n\n", "OPERATIONS");
 	if (ft_needs_swap_top(data))
@@ -26,6 +25,21 @@ void push_swap(t_push_swap *data)
 		ft_swap_bottom(data);
 	else
 		ft_normal_sort(data);
+}
+
+static void				ft_init_operations(t_push_swap *data)
+{
+	data->sa = 0;
+	data->sb = 0;
+	data->ss = 0;
+	data->pa = 0;
+	data->pb = 0;
+	data->ra = 0;
+	data->rb = 0;
+	data->rr = 0;
+	data->rra = 0;
+	data->rrb = 0;
+	data->rrr = 0;
 }
 
 static t_push_swap		*ft_set_data(int argc, char **argv)
@@ -47,17 +61,6 @@ static t_push_swap		*ft_set_data(int argc, char **argv)
 	data->nb_a = data->nb_elem;
 	data->nb_b = 0;
 	data->nb_operations = 0;
-	data->sa = 0;
-	data->sb = 0;
-	data->ss = 0;
-	data->pa = 0;
-	data->pb = 0;
-	data->ra = 0;
-	data->rb = 0;
-	data->rr = 0;
-	data->rra = 0;
-	data->rrb = 0;
-	data->rrr = 0;
 	return (data);
 }
 
@@ -78,6 +81,6 @@ int						main(int argc, char **argv)
 		ft_printf("\n{bold}{green}%d OPERATIONS{eoc}\n", data->nb_operations);
 	if (data->option_r)
 		ft_report(data);
-
+	free(data);
 	return (0);
 }

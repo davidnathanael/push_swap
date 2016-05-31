@@ -13,7 +13,7 @@
 #include <limits.h>
 #include "push_swap.h"
 
-int              ft_arg_flag(int i, char **argv, int argc, t_push_swap *data)
+static int			ft_arg_flag(int i, char **argv, int argc, t_push_swap *data)
 {
 	int j;
 
@@ -21,8 +21,7 @@ int              ft_arg_flag(int i, char **argv, int argc, t_push_swap *data)
 	while (i > 0)
 	{
 		if (argv[i][0] != '-')
-		return (0);
-		else
+			return (0);
 		while (argv[i][j])
 		{
 			if (argv[i][j] == 'v')
@@ -43,7 +42,7 @@ int              ft_arg_flag(int i, char **argv, int argc, t_push_swap *data)
 	return (1);
 }
 
-static int         ft_check_double(int *tab, int argc)
+static int			ft_check_double(int *tab, int argc)
 {
 	int i;
 	int j;
@@ -64,7 +63,7 @@ static int         ft_check_double(int *tab, int argc)
 	return (1);
 }
 
-static int         ft_check_digit(char *str)
+static int			ft_check_digit(char *str)
 {
 	if (ft_strlen(str) >= 2 && (*str == '-' || *str == '+'))
 		if (!ft_isdigit(str[1]))
@@ -78,28 +77,26 @@ static int         ft_check_digit(char *str)
 	return (1);
 }
 
-t_stack		*ft_check_arg(char **argv, int argc, t_push_swap *data)
+t_stack				*ft_check_arg(char **argv, int argc, t_push_swap *data)
 {
-	int     tab[argc - 1];
-	int     i;
+	int			tab[argc - 1];
+	int			i;
 	long long	nb;
-	t_stack  *lst;
+	t_stack		*lst;
 
 	lst = NULL;
 	i = argc - 1;
 	nb = 0;
-	if (argc == 1)
-		return (NULL);
 	while (i > 0)
 	{
 		if (!ft_check_digit(argv[i]))
 			return ((ft_arg_flag(i, argv, argc, data)) ? lst : NULL);
 		nb = ft_lltoi(argv[i]);
 		if (nb < INT_MIN || nb > INT_MAX || ft_strlen(argv[i]) > 11)
-			return NULL;
-		(!lst) ? lst = lst_new((int) nb)
-			   : lst_add(&lst, lst_new((int) nb));
-		tab[i - 1] = (int) nb;
+			return (NULL);
+		(!lst) ? lst = lst_new((int)nb)
+				: lst_add(&lst, lst_new((int)nb));
+		tab[i - 1] = (int)nb;
 		i--;
 		data->nb_elem++;
 	}

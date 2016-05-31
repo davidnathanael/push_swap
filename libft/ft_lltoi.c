@@ -15,8 +15,8 @@
 long long		ft_lltoi(const char *str)
 {
 	long long		ret;
-	int		n;
-	int		i;
+	int				n;
+	int				i;
 
 	ret = 0;
 	i = 0;

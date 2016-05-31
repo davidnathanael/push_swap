@@ -12,36 +12,36 @@
 
 #include "push_swap.h"
 
-t_bool	ft_is_prev_sorted(t_stack *stack)
+t_bool		ft_is_prev_sorted(t_stack *stack)
 {
 	if (!stack)
-		return TRUE;
+		return (TRUE);
 	while (stack->prev)
 	{
 		if (stack->content < stack->prev->content)
-			return FALSE;
+			return (FALSE);
 		stack = stack->prev;
 	}
-	return TRUE;
+	return (TRUE);
 }
 
-t_bool	ft_is_sorted(t_stack *stack)
+t_bool		ft_is_sorted(t_stack *stack)
 {
 	if (!stack)
-		return TRUE;
+		return (TRUE);
 	while (stack->next)
 	{
 		if (stack->content > stack->next->content)
-			return FALSE;
+			return (FALSE);
 		stack = stack->next;
 	}
-	return TRUE;
+	return (TRUE);
 }
 
-int		ft_get_min(t_stack *stack)
+int			ft_get_min(t_stack *stack)
 {
-	int 		min;
-	int 		j;
+	int		min;
+	int		j;
 
 	min = stack->content;
 	j = 0;
@@ -51,13 +51,13 @@ int		ft_get_min(t_stack *stack)
 			min = stack->content;
 		stack = stack->next;
 	}
-	return min;
+	return (min);
 }
 
-int		ft_get_max(t_stack *stack)
+int			ft_get_max(t_stack *stack)
 {
-	int 		max;
-	int 		j;
+	int		max;
+	int		j;
 
 	max = stack->content;
 	j = 0;
@@ -67,13 +67,13 @@ int		ft_get_max(t_stack *stack)
 			max = stack->content;
 		stack = stack->next;
 	}
-	return max;
+	return (max);
 }
 
-int	ft_get_min_pos(t_stack *stack)
+int			ft_get_min_pos(t_stack *stack)
 {
-	int 		min;
-	int			pos;
+	int		min;
+	int		pos;
 
 	pos = 0;
 	min = ft_get_min(stack);
@@ -84,37 +84,5 @@ int	ft_get_min_pos(t_stack *stack)
 		pos++;
 		stack = stack->next;
 	}
-	return pos;
-}
-
-t_bool	ft_needs_swap_top(t_push_swap *data)
-{
-	int			tmp[3];
-	t_stack		*stack;
-
-	stack = data->stack_a;
-	if (data->nb_elem == 2 && !ft_is_sorted(stack))
-		return (TRUE);
-	else if (data->nb_elem >= 3)
-	{
-		tmp[0] = stack->content;
-		tmp[1] = stack->next->content;
-		tmp[2] = stack->next->next->content;
-		if (tmp[0] < tmp[2] && tmp[1] < tmp[2] &&
-			tmp[0] > tmp[1] && ft_is_sorted(stack->next->next))
-			return TRUE;
-	}
-	return (FALSE);
-}
-
-t_bool	ft_needs_swap_bottom(t_push_swap *data)
-{
-	t_stack *tmp;
-
-	tmp = data->stack_a;
-	while (tmp->next)
-		tmp = tmp->next;
-	if (ft_is_prev_sorted(tmp->prev))
-		return (TRUE);
-	return (FALSE);
+	return (pos);
 }

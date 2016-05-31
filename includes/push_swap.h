@@ -13,11 +13,11 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stdlib.h>
-#include <stdio.h>
-#include "libft.h"
-#include "ft_printf.h"
-#include "limits.h"
+# include <stdlib.h>
+# include <stdio.h>
+# include "libft.h"
+# include "ft_printf.h"
+# include "limits.h"
 
 # define FALSE 0
 # define TRUE 1
@@ -25,16 +25,15 @@
 # define HORIZONTAL ' '
 # define VERTICAL '\n'
 
-typedef struct          s_stack
+typedef struct			s_stack
 {
-	int                	content;
-	struct s_stack      *next;
+	int					content;
+	struct s_stack		*next;
 	struct s_stack		*prev;
-}                       t_stack;
+}						t_stack;
 
 typedef	unsigned char	t_bool;
 typedef	unsigned char	t_orientation;
-// typedef	unsigned char	t_operation;
 
 typedef enum		e_operation
 {
@@ -59,10 +58,10 @@ typedef struct			s_push_swap
 	t_stack				*stack_b;
 	int					nb_a;
 	int					nb_b;
-	t_bool				option_v; //verbose
-	t_bool				option_n; //nb_operations
-	t_bool				option_r; //report
-	t_bool				option_m; //mute
+	t_bool				option_v;
+	t_bool				option_n;
+	t_bool				option_r;
+	t_bool				option_m;
 	int					sa;
 	int					sb;
 	int					ss;
@@ -74,9 +73,7 @@ typedef struct			s_push_swap
 	int					rra;
 	int					rrb;
 	int					rrr;
-}                       t_push_swap;
-
-
+}						t_push_swap;
 
 t_stack					*ft_check_arg(char **argv, int argc, t_push_swap *data);
 t_stack					*lst_new(int val);
@@ -92,9 +89,9 @@ int						*ft_get_3_elems(t_push_swap *data);
 
 t_bool					ft_needs_swap_top(t_push_swap *data);
 t_bool					ft_needs_swap_bottom(t_push_swap *data);
-void 					ft_swap_bottom(t_push_swap *data);
+void					ft_swap_bottom(t_push_swap *data);
 void					ft_normal_sort(t_push_swap *data);
-void 					ft_handle_three_elems(t_push_swap *data);
+void					ft_handle_three_elems(t_push_swap *data);
 
 void					ft_swap(t_stack **stack);
 void					ft_push(t_stack **stack_src, t_stack **stack_dest);
@@ -113,12 +110,11 @@ void					ft_rra(t_push_swap *data);
 void					ft_rrb(t_push_swap *data);
 void					ft_rrr(t_push_swap *data);
 
-void					ft_print_stack(t_stack *stack, char stack_letter, int nb_elem,
-						t_orientation or);
-void 					ft_print_data(t_push_swap *data);
-void 					ft_print_nb_operations(t_push_swap *data);
-void 					ft_print_operation(t_operation operation);
-void 					ft_print_separator(t_push_swap *data);
-void 					ft_report(t_push_swap *data);
+void					ft_print_stack(t_stack *stack, char stack_letter,
+						int nb_elem, t_orientation or);
+void					ft_print_nb_operations(t_push_swap *data);
+void					ft_print_operation(t_operation operation);
+void					ft_print_separator(t_push_swap *data);
+void					ft_report(t_push_swap *data);
 
 #endif

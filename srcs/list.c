@@ -12,22 +12,22 @@
 
 #include "push_swap.h"
 
-t_stack *lst_new(int val)
+t_stack		*lst_new(int val)
 {
-    t_stack *new;
+	t_stack *new;
 
-    new = (t_stack *)malloc(sizeof(t_stack));
-    new->content = val;
-    new->next = NULL;
-    new->prev = NULL;
-    return (new);
+	new = (t_stack *)malloc(sizeof(t_stack));
+	new->content = val;
+	new->next = NULL;
+	new->prev = NULL;
+	return (new);
 }
 
-void	lst_add(t_stack **alst, t_stack *new)
+void		lst_add(t_stack **alst, t_stack *new)
 {
 	if (alst && new)
 	{
-        (*alst)->prev = new;
+		(*alst)->prev = new;
 		new->next = *alst;
 		*alst = new;
 	}

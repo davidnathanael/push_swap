@@ -32,7 +32,7 @@ void	ft_push(t_stack **stack_src, t_stack **stack_dest)
 
 	tmp = NULL;
 	if (!*stack_src)
-		return;
+		return ;
 	tmp = *stack_src;
 	*stack_src = tmp->next;
 	tmp->next = *stack_dest;
@@ -47,7 +47,7 @@ void	ft_rotate(t_stack **stack)
 	tmp = *stack;
 	first = *stack;
 	if (!*stack)
-		return;
+		return ;
 	while (tmp->next)
 		tmp = tmp->next;
 	tmp->next = first;
@@ -57,7 +57,7 @@ void	ft_rotate(t_stack **stack)
 	first->next = NULL;
 }
 
-void ft_reverse(t_stack **stack)
+void	ft_reverse(t_stack **stack)
 {
 	t_stack	*tmp;
 	t_stack *last;
@@ -65,7 +65,7 @@ void ft_reverse(t_stack **stack)
 	tmp = *stack;
 	last = NULL;
 	if (!*stack)
-		return;
+		return ;
 	while (tmp->next)
 		tmp = tmp->next;
 	last = tmp->prev;

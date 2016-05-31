@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void ft_sa(t_push_swap *data)
+void	ft_sa(t_push_swap *data)
 {
 	if (!data->option_m)
 		ft_print_operation(SA);
@@ -27,7 +27,7 @@ void ft_sa(t_push_swap *data)
 	}
 }
 
-void ft_sb(t_push_swap *data)
+void	ft_sb(t_push_swap *data)
 {
 	if (!data->option_m)
 		ft_print_operation(SB);
@@ -42,7 +42,7 @@ void ft_sb(t_push_swap *data)
 	}
 }
 
-void ft_ss(t_push_swap *data)
+void	ft_ss(t_push_swap *data)
 {
 	if (!data->option_m)
 		ft_print_operation(SS);
@@ -58,7 +58,7 @@ void ft_ss(t_push_swap *data)
 	}
 }
 
-void ft_pa(t_push_swap *data)
+void	ft_pa(t_push_swap *data)
 {
 	if (!data->option_m)
 		ft_print_operation(PA);
@@ -75,7 +75,7 @@ void ft_pa(t_push_swap *data)
 	}
 }
 
-void ft_pb(t_push_swap *data)
+void	ft_pb(t_push_swap *data)
 {
 	if (!data->option_m)
 		ft_print_operation(PB);

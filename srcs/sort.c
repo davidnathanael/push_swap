@@ -12,8 +12,7 @@
 
 #include "push_swap.h"
 
-
-void ft_swap_bottom(t_push_swap *data)
+void	ft_swap_bottom(t_push_swap *data)
 {
 	ft_rra(data);
 	ft_rra(data);
@@ -22,8 +21,7 @@ void ft_swap_bottom(t_push_swap *data)
 	ft_ra(data);
 }
 
-
-void ft_normal_sort(t_push_swap *data)
+void	ft_normal_sort(t_push_swap *data)
 {
 	int min;
 	int min_pos;
@@ -46,7 +44,7 @@ void ft_normal_sort(t_push_swap *data)
 		ft_pa(data);
 }
 
-void ft_handle_three_elems(t_push_swap *data)
+void	ft_handle_three_elems(t_push_swap *data)
 {
 	int		*elems;
 	int		pos;
