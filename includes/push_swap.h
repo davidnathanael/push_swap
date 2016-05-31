@@ -62,6 +62,7 @@ typedef struct			s_push_swap
 	t_bool				option_v; //verbose
 	t_bool				option_n; //nb_operations
 	t_bool				option_r; //report
+	t_bool				option_m; //mute
 	int					sa;
 	int					sb;
 	int					ss;
@@ -115,7 +116,9 @@ void					ft_rrr(t_push_swap *data);
 void					ft_print_stack(t_stack *stack, char stack_letter, int nb_elem,
 						t_orientation or);
 void 					ft_print_data(t_push_swap *data);
+void 					ft_print_nb_operations(t_push_swap *data);
 void 					ft_print_operation(t_operation operation);
+void 					ft_print_separator(t_push_swap *data);
 void 					ft_report(t_push_swap *data);
 
 #endif

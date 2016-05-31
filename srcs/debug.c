@@ -69,5 +69,20 @@ void ft_print_operation(t_operation operation)
 		ft_printf("{bold}{cyan}rrb");
 	if (operation == RRR)
 		ft_printf("{bold}{cyan}rrr");
-	ft_printf("{eoc} ");
+	ft_printf("{eoc}");
+}
+
+void ft_print_separator(t_push_swap *data)
+{
+	if (data->option_m)
+		return ;
+	if (ft_is_sorted(data->stack_a) && data->nb_elem == data->nb_a)
+		ft_putchar(VERTICAL);
+	else
+		ft_putchar(HORIZONTAL);
+}
+
+void ft_print_nb_operations(t_push_swap *data)
+{
+	ft_printf("\n{bold}{green}%d OPERATIONS{eoc}\n", data->nb_operations);
 }
