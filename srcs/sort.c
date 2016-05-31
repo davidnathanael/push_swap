@@ -29,6 +29,8 @@ void	ft_normal_sort(t_push_swap *data)
 	min = 0;
 	while (!ft_is_sorted(data->stack_a))
 	{
+		if (ft_is_special_case(data))
+			break ;
 		min = ft_get_min(data->stack_a);
 		min_pos = ft_get_min_pos(data->stack_a);
 		if (data->nb_a / 2 < min_pos)

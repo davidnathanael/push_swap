@@ -92,6 +92,7 @@ t_bool					ft_needs_swap_bottom(t_push_swap *data);
 void					ft_swap_bottom(t_push_swap *data);
 void					ft_normal_sort(t_push_swap *data);
 void					ft_handle_three_elems(t_push_swap *data);
+t_bool					ft_is_special_case(t_push_swap *data);
 
 void					ft_swap(t_stack **stack);
 void					ft_push(t_stack **stack_src, t_stack **stack_dest);
