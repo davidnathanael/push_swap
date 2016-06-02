@@ -14,7 +14,7 @@
 
 static void				push_swap(t_push_swap *data)
 {
-	// ft_printf("\e[1;1H\e[2J");
+	ft_printf("\e[1;1H\e[2J");
 	if (data->option_v)
 		ft_printf("\n{red}-------- %s --------{eoc}\n\n", "OPERATIONS");
 	if (ft_needs_swap_top(data))
@@ -55,7 +55,6 @@ static t_push_swap		*ft_set_data(int argc, char **argv)
 	data->option_m = FALSE;
 	data->nb_elem = 0;
 	data->stack_a = ft_check_arg(argv, argc, data);
-	// ft_printf("");
 	if (!data->stack_a && argc != 1)
 		return (NULL);
 	data->stack_b = NULL;
