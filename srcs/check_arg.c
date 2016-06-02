@@ -91,7 +91,7 @@ t_stack				*ft_check_arg(char **argv, int argc, t_push_swap *data)
 	{
 		if (!ft_check_digit(argv[i]))
 			return ((ft_arg_flag(i, argv, data)
-			&& ft_check_double(tab, argc, argc - i)) ? lst : NULL);
+			&& ft_check_double(tab, argc, i)) ? lst : NULL);
 			nb = ft_lltoi(argv[i]);
 		if (nb < INT_MIN || nb > INT_MAX || ft_strlen(argv[i]) > 11)
 			return (NULL);
@@ -101,5 +101,5 @@ t_stack				*ft_check_arg(char **argv, int argc, t_push_swap *data)
 		i--;
 		data->nb_elem++;
 	}
-	return ((ft_check_double(tab, argc, 0)) ? lst : NULL);
+	return ((ft_check_double(tab, argc, i)) ? lst : NULL);
 }
