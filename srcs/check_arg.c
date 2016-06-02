@@ -13,7 +13,7 @@
 #include <limits.h>
 #include "push_swap.h"
 
-static int			ft_arg_flag(int i, char **argv, int argc, t_push_swap *data)
+static int			ft_arg_flag(int i, char **argv, t_push_swap *data)
 {
 	int j;
 
@@ -49,17 +49,22 @@ static int			ft_check_double(int *tab, int argc)
 
 	i = 0;
 	j = 0;
+	ft_printf("argc : %d\n", argc);
 	while (i < argc - 1)
 	{
 		while (j < argc - 1)
 		{
 			if (tab[i] == tab[j] && j != i)
+			{
+				ft_printf("FALSE | tab[%d] => %d | tab[%d] => %d\n", i, tab[i], j, tab[j]);
 				return (0);
+			}
 			j++;
 		}
 		j = 0;
 		i++;
 	}
+	ft_printf("TRUE\n");
 	return (1);
 }
 
@@ -90,7 +95,7 @@ t_stack				*ft_check_arg(char **argv, int argc, t_push_swap *data)
 	while (i > 0)
 	{
 		if (!ft_check_digit(argv[i]))
-			return ((ft_arg_flag(i, argv, argc, data)
+			return ((ft_arg_flag(i, argv, data)
 			&& ft_check_double(tab, argc)) ? lst : NULL);
 			nb = ft_lltoi(argv[i]);
 		if (nb < INT_MIN || nb > INT_MAX || ft_strlen(argv[i]) > 11)
@@ -101,7 +106,5 @@ t_stack				*ft_check_arg(char **argv, int argc, t_push_swap *data)
 		i--;
 		data->nb_elem++;
 	}
-	if (!ft_check_double(tab, argc))
-		return (NULL);
-	return (lst);
+	return ((ft_check_double(tab, argc)) ? lst : NULL);
 }
