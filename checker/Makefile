@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	push_swap
+NAME		=	checker
 
 NAMEBASE    =   $(shell basename $(NAME))
 
@@ -28,6 +28,8 @@ LIBFT_DIR	=	libft/
 
 LIBFT_LIB	=	libft/libft.a
 
+GNL_SRC		=	get_next_line/get_next_line.c
+
 FTPRINTF_LIB	=	libftprintf/libftprintf.a
 
 SRCBASE		=	\
@@ -41,12 +43,14 @@ SRCBASE		=	\
 				sort.c														\
 				swap_push.c													\
 				utils.c														\
-				utils2.c
+				utils2.c													\
+				get_input.c													\
 
 INCBASE		=	\
 				ft_printf.h													\
 				libft.h														\
-				push_swap.h
+				push_swap.h													\
+				get_next_line.h												\
 
 SRCS		=	$(addprefix $(SRCDIR), $(SRCBASE))
 
@@ -60,7 +64,7 @@ all:		$(NAME)
 	echo "\033[38;5;44m☑️  ALL    $(NAMEBASE) is done\033[0m\033[K"
 
 $(NAME):	$(OBJS)
-	$(CC) $(FLAGS) -o $(NAME) $(OBJS) $(LIBFT_LIB) $(FTPRINTF_LIB)
+	$(CC) $(FLAGS) -o $(NAME) $(OBJS) $(GNL_SRC) $(LIBFT_LIB) $(FTPRINTF_LIB)
 	echo -en "\r\033[38;5;22m☑️  MAKE   $(NAMEBASE)\033[0m\033[K"
 	echo "\r\033[38;5;184m👥  GROUP MEMBER(S):\033[0m\033[K"
 	echo "\r\033[38;5;15m`cat auteur | sed s/^/\ \ \ \ -/g`\033[0m\033[K"

@@ -58,38 +58,38 @@ void	ft_report(t_push_swap *data)
 void	ft_print_operation(t_operation operation)
 {
 	if (operation == SA)
-		ft_printf("{bold}{red}sa");
+		ft_printf("sa");
 	if (operation == SB)
-		ft_printf("{bold}{red}sb");
+		ft_printf("sb");
 	if (operation == SS)
-		ft_printf("{bold}{red}ss");
+		ft_printf("ss");
 	if (operation == PA)
-		ft_printf("{bold}{green}pa");
+		ft_printf("pa");
 	if (operation == PB)
-		ft_printf("{bold}{green}pb");
+		ft_printf("pb");
 	if (operation == RA)
-		ft_printf("{bold}{yellow}ra");
+		ft_printf("ra");
 	if (operation == RB)
-		ft_printf("{bold}{yellow}rb");
+		ft_printf("rb");
 	if (operation == RR)
-		ft_printf("{bold}{yellow}rr");
+		ft_printf("rr");
 	if (operation == RRA)
-		ft_printf("{bold}{cyan}rra");
+		ft_printf("rra");
 	if (operation == RRB)
-		ft_printf("{bold}{cyan}rrb");
+		ft_printf("rrb");
 	if (operation == RRR)
-		ft_printf("{bold}{cyan}rrr");
-	ft_printf("{eoc}");
+		ft_printf("rrr");
+	//ft_printf("{eoc}");
 }
 
 void	ft_print_separator(t_push_swap *data)
 {
-	if (data->option_m)
-		return ;
-	if (ft_is_sorted(data->stack_a) && data->nb_elem == data->nb_a)
+//	if (data->option_m)
+//		return ;
+//	if (ft_is_sorted(data->stack_a) && data->nb_elem == data->nb_a)
 		ft_putchar(VERTICAL);
-	else
-		ft_putchar(HORIZONTAL);
+//	else
+//		ft_putchar(HORIZONTAL);
 }
 
 void	ft_print_nb_operations(t_push_swap *data)

@@ -118,4 +118,6 @@ void					ft_print_operation(t_operation operation);
 void					ft_print_separator(t_push_swap *data);
 void					ft_report(t_push_swap *data);
 
+t_bool					ft_get_input(t_push_swap *data);
+
 #endif
